@@ -1,0 +1,39 @@
+/* base.css */
+/* Basic reset and global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #0066cc;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+header, footer {
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+}
+
+nav a {
+    margin-right: 15px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}

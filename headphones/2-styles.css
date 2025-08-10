@@ -1,0 +1,252 @@
+/* Custom Icon Font */
+@font-face {
+  font-family: 'holberton_school-icon';
+  src: url('fonts/holberton_school-icon.woff') format('woff'),
+       url('fonts/holberton_school-icon.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="holberton_school-icon-"]::before {
+  font-family: 'holberton_school-icon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+}
+
+/* Icon classes (assumed based on demo page in holberton_school-icon.zip) */
+.holberton_school-icon-sound::before { content: "\e900"; }
+.holberton_school-icon-comfort::before { content: "\e901"; }
+.holberton_school-icon-wireless::before { content: "\e902"; }
+.holberton_school-icon-durability::before { content: "\e903"; }
+
+/* CSS Variables */
+:root {
+  --primary-color: #FF6565;
+  --text-color: #333;
+  --bg-color: #f9f9f9;
+  --white: #fff;
+  --font-main: 'Source Sans Pro', sans-serif;
+  --font-logo: 'Spin Cycle OT', sans-serif;
+  --max-width: 1000px;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+}
+
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+}
+
+/* Reusable Container */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--spacing-md);
+}
+
+/* Header and Navigation */
+header {
+  background-color: var(--white);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--spacing-sm);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--font-logo);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+nav a:hover,
+nav a:active {
+  color: var(--primary-color);
+}
+
+/* Hero Section */
+#hero {
+  max-width: var(--max-width);
+  margin: var(--spacing-md) auto;
+  text-align: center;
+  padding: var(--spacing-md);
+  background: url('images/hero-bg.jpg') no-repeat center/cover;
+}
+
+.hero-content {
+  background: rgba(255, 255, 255, 0.8);
+  padding: var(--spacing-md);
+  border-radius: 8px;
+}
+
+#hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+#hero p {
+  font-size: 1.2rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: var(--primary-color);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.btn:hover,
+.btn:active {
+  opacity: 0.9;
+}
+
+/* What We Do Section */
+#what-we-do {
+  text-align: center;
+}
+
+#what-we-do h2 {
+  font-size: 2rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.section-intro {
+  font-size: 1.2rem;
+  margin-bottom: var(--spacing-md);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-md);
+}
+
+.feature-card {
+  background-color: var(--white);
+  padding: var(--spacing-sm);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card .icon {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-sm);
+  display: block;
+}
+
+.feature-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.feature-card p {
+  font-size: 1rem;
+}
+
+/* Our Results Section */
+#our-results {
+  text-align: center;
+  background-color: var(--white);
+}
+
+#our-results h2 {
+  font-size: 2rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.result-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-md);
+}
+
+.result-card {
+  padding: var(--spacing-sm);
+}
+
+.result-card h3 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-sm);
+}
+
+.result-card p {
+  font-size: 1rem;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 480px) {
+  nav {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #hero h1 {
+    font-size: 1.8rem;
+  }
+
+  #hero p {
+    font-size: 1rem;
+  }
+
+  .hero-content {
+    padding: var(--spacing-sm);
+  }
+
+  .feature-grid,
+  .result-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #what-we-do,
+  #our-results {
+    padding: var(--spacing-sm);
+  }
+}
